@@ -6,8 +6,10 @@ ENV ORACLE_HOME /u01/app/oracle/product/11.2.0/xe
 RUN echo "Europe/Zurich" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 
-######## maven ###########
 RUN apt-get update
+RUN apt-get install -y iputils-ping dnsutils vim less
+
+######## maven ###########
 RUN apt-get install -y openjdk-8-jdk-headless
 RUN apt-get install -y maven
 
