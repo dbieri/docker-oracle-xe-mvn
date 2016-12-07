@@ -9,16 +9,13 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 RUN apt-get update
 RUN apt-get install -y iputils-ping dnsutils vim less
 
-######## maven ###########
+######## maven ##########
 RUN apt-get install -y openjdk-8-jdk-headless
 RUN apt-get install -y maven
 
-#cleanup apt
+# cleanup apt
 RUN apt-get autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-
 CMD /start.sh
-
-
