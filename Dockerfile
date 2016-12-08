@@ -2,10 +2,6 @@ FROM dbieri/docker-oracle-xe-11g
 
 ENV ORACLE_HOME /u01/app/oracle/product/11.2.0/xe
 
-# set timezone
-RUN echo "Europe/Zurich" > /etc/timezone
-RUN dpkg-reconfigure -f noninteractive tzdata
-
 RUN apt-get update
 RUN apt-get install -y iputils-ping dnsutils vim less
 
